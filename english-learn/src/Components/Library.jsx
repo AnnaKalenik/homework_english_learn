@@ -1,10 +1,10 @@
 import React from 'react';
 
-class Page extends React.Component {
+class Library extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: true,
+            isOpen: false,
             translation: '',
             value: '',
             library: JSON.parse(localStorage.getItem('librery')) || [{id: '', word: '', translate: ''}]
@@ -17,11 +17,8 @@ class Page extends React.Component {
 
     componentDidMount() {
         document.addEventListener('keydown', (event) => {
-            console.log('hi');
             if (this.state.value.length > 0 && this.state.isOpen && event.key === 'Enter') {
                 this.addWordToLibrary();
-
-                console.log('hello');
             };
         });
     }
@@ -30,6 +27,14 @@ class Page extends React.Component {
         this.setState(prevState => ({
             isOpen: !prevState.isOpen
         }));
+    }
+
+    async removeWordFromLibrary(index) {
+        await this.setState(prevState => ({
+            library: prevState.library.filter((word, i) => i !== index)
+        }));
+
+        await localStorage.setItem('library', JSON.stringify(this.state.library));
     }
 
     async addWordToLibrary() {
@@ -47,11 +52,16 @@ class Page extends React.Component {
             };
 
             await this.setState(prevState => ({
-                library: [...prevState.library, {id: this.state.value.length, word: this.state.value, translate: this.state.translation}]
+                library: [...prevState.library, {id: this.state.library.length, word: this.state.value, translate: this.state.translation}]
             }));
             
             await localStorage.setItem('library', JSON.stringify(this.state.library));
-            console.log(this.state);
+            
+            await this.changeMode();
+
+            await this.setState( () => ({
+                translation: ''
+            }));
         }
         catch (error) {
             console.log(error);
@@ -70,7 +80,7 @@ class Page extends React.Component {
             <div className="page-container">
 
                 <div className="add-word-container">
-                    {this.state.isOpen ? 
+                    {!this.state.isOpen ? 
                         <span className="label-title">Add new word</span> :
                         <div>
                             <input onChange={this.getValue} placeholder="Enter new word" />
@@ -78,7 +88,7 @@ class Page extends React.Component {
                             <button onClick={this.addWordToLibrary} className="btn-round check">✓</button>
                         </div>
                     }
-                    <button onClick={this.changeMode} className="btn-round add"></button>
+                    <button onClick={this.changeMode} className={this.state.isOpen ? 'btn-round close' : 'btn-round add'}></button>
                 </div>
 
                 <div className="library-container">
@@ -87,8 +97,8 @@ class Page extends React.Component {
                         <div>Translate</div>
                         <div>Learn level</div>
                     </div>
-                    {this.state.library.map(word => (
-                        <div>
+                    {this.state.library.map((word, index) => (
+                        <div key={index}>
                             <div>
                                 {word.id}
                             </div>
@@ -98,6 +108,7 @@ class Page extends React.Component {
                             <div>
                                 {word.translate}
                             </div>
+                            <div onClick={() => this.removeWordFromLibrary(index)}>Delete</div>
                         </div>
                     ))}
                 </div>
@@ -107,4 +118,4 @@ class Page extends React.Component {
     }
 }
 
-export default Page;
+export default Library;

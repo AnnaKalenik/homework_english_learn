@@ -22,15 +22,17 @@ body {
   padding: 150px 0 0 0;
 }
 
-.nav-container li {
+.nav-container a {
   padding: 15px;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
   line-height: 28px;
+  text-decoration: none;
+  color: white;
 }
 
-.active {
+a.active {
   background: #F9FBFF;
   color: #20B887;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -70,10 +72,16 @@ body {
   border-radius: 50%;
 }
 
-.btn-round.add {
+.btn-round.add,
+.btn-round.close {
   background-image: url("./images/add.svg");
   background-position: center;
   background-repeat: no-repeat;
+  transition: .2s linear;
+}
+
+.btn-round.close {
+  transform: rotate(45deg);
 }
 
 .app-wrapper {
@@ -134,7 +142,7 @@ body {
   content: '';
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 0;
   width: 3px;
   background: rgba(242, 246, 254, 0.46);
   height: 100%;
@@ -142,13 +150,12 @@ body {
 
 .library-container > div  {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
   line-height: 28px;
-
   color: #836344;
 }
 
@@ -192,5 +199,86 @@ body {
   align-items: start;
   grid-auto-flow: row;
   align-content: flex-start;
-  row-gap: 68px;
+  row-gap: 60px;
+}
+
+.learn-wrapper {
+  display: grid;
+  align-items: center;
+  align-content: start;
+  margin-top: 117px;
+  justify-content: center;
+  row-gap: 30px;
+}
+
+.learn-container {
+  display: grid;
+  row-gap: 60px;
+  position: relative;
+  background: rgba(242, 246, 254, 0.46);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  padding: 60px 120px;
+}
+
+.percentage {
+  position: absolute;
+  background: #F26C5E;
+  color: white;
+  font-size: 24px;
+  line-height: 28px;
+  top: -15px;
+  left: -15px;
+  padding: 4px 15px;
+}
+
+.word-translation {
+  font-size: 72px;
+  line-height: 84px;
+  color: #004828;
+}
+
+.word-container {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  text-align: center;
+  padding: 15px;
+}
+
+.description-label {
+  position: absolute;
+  top: -23px;
+  left: 0;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.52);
+}
+
+.word {
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 56px;
+  color: #1AAD7E;
+}
+
+.btn-next {
+  justify-self: end;
+  padding: 4px 40px;
+  background-color: #0C9267;
+  color: white;
+}
+
+.btn-repeat {
+  background-color: #0C9267;
+  color: white;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  font-size: 40px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
