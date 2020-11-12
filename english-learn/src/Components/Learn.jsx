@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const Learn = () => {
-    const library = JSON.parse(localStorage.getItem('librery')) || [{id: '', word: '', translate: ''}];
+    const library = JSON.parse(localStorage.getItem('library')) || [{id: '', word: '', translate: ''}];
     const [index, setIndex] = useState(0);
     const [end, setEnd] = useState(false);
     const word = library[index];

@@ -7,7 +7,7 @@ class Library extends React.Component {
             isOpen: false,
             translation: '',
             value: '',
-            library: JSON.parse(localStorage.getItem('librery')) || [{id: '', word: '', translate: ''}]
+            library: JSON.parse(localStorage.getItem('library')) || [{id: '', word: '', translate: ''}]
         };
 
         this.changeMode = this.changeMode.bind(this);
