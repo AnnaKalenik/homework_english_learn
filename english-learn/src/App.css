@@ -260,6 +260,7 @@ a.active {
 }
 
 .btn-next {
+	cursor: pointer;
 	justify-self: end;
 	padding: 4px 40px;
 	background-color: #0C9267;

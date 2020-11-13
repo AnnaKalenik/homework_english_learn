@@ -8,7 +8,9 @@ class Library extends React.Component {
             translation: '',
             value: '',
             library: JSON.parse(localStorage.getItem('library')) || [{id: '', word: '', translate: ''}]
-        };
+        }; 
+
+        this.wordsRef = Array(this.state.library.length);
 
         this.changeMode = this.changeMode.bind(this);
         this.getValue = this.getValue.bind(this);
@@ -98,7 +100,7 @@ class Library extends React.Component {
                         <div>Learn level</div>
                     </div>
                     {this.state.library.map((word, index) => (
-                        <div key={index}>
+                        <div key={index} ref={el => this.wordsRef[index] = el}>
                             <div>
                                 {word.id}
                             </div>
@@ -112,7 +114,6 @@ class Library extends React.Component {
                         </div>
                     ))}
                 </div>
-
             </div>
         );
     }
