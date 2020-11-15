@@ -28,7 +28,14 @@ export default (props) => {
                     CheckLevel={props.CheckLevel}
                 /> :
             location.pathname === '/training/write-mode' ?
-                <WriteMode /> : null}
+                <WriteMode 
+                    setScore={props.setScore}
+                    score={props.score}
+                    correctAnswer={correctAnswer}
+                    setCorrectAnswer={setCorrectAnswer}
+                    wrongAnswer={wrongAnswer}
+                    setWrongAnswer={setWrongAnswer}
+                /> : null}
         </div>
     );
 };

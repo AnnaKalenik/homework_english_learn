@@ -420,3 +420,25 @@ a.active {
 	row-gap: 10px;
 	text-align: center;
 }
+
+.input-block {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 8fr 2fr;
+	column-gap: 10px;
+}
+
+.customInput {
+	position: relative;
+	border: none;
+	background: transparent;
+	padding: 8px 13px;
+	border-bottom: 1px solid #084934;
+}
+
+.btn-enter {
+	background-color: #084934;
+	color: white;
+	padding: 8px;
+	border: none;
+}
