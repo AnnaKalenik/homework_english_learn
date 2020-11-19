@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+//import delete from "../images/delete.svg";
 
 class Library extends React.Component {
     constructor(props) {
@@ -54,7 +55,7 @@ class Library extends React.Component {
             };
 
             await this.setState(prevState => ({
-                library: [...prevState.library, {id: this.state.library.length, word: this.state.value, translate: this.state.translation}]
+                library: [...prevState.library, {id: this.state.library.length, word: this.state.value, translate: this.state.translation, correct: 0, learn: 0, error: 0}]
             }));
             
             await localStorage.setItem('library', JSON.stringify(this.state.library));
@@ -110,7 +111,7 @@ class Library extends React.Component {
                             <div>
                                 {word.translate}
                             </div>
-                            <div onClick={() => this.removeWordFromLibrary(index)}>Delete</div>
+                            <div onClick={() => this.removeWordFromLibrary(index)} className="btn-delete"></div>
                         </div>
                     ))}
                 </div>

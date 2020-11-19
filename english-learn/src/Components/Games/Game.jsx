@@ -19,8 +19,6 @@ export default (props) => {
             </div>
             {location.pathname === '/training/check-mode' ?
                 <CheckMode 
-                    setScore={props.setScore}
-                    score={props.score}
                     correctAnswer={correctAnswer}
                     setCorrectAnswer={setCorrectAnswer}
                     wrongAnswer={wrongAnswer}
@@ -29,8 +27,6 @@ export default (props) => {
                 /> :
             location.pathname === '/training/write-mode' ?
                 <WriteMode 
-                    setScore={props.setScore}
-                    score={props.score}
                     correctAnswer={correctAnswer}
                     setCorrectAnswer={setCorrectAnswer}
                     wrongAnswer={wrongAnswer}

@@ -4,9 +4,13 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.app-wrapper {
+	height: 100vh;
+}
+
 .nav {
 	min-width: 295px;
-	height: 100vh;
+	height: 100%;
 	left: 0;
 	top: 0;			  
 	background: #20B887;
@@ -52,6 +56,10 @@ a.active {
 	font-size: 36px;
 	line-height: 42px;
 	color: #6FF3C8;
+}
+
+.page-container {
+	padding: 10px 0 50px 0; 
 }
 
 .btn-round:focus {
@@ -153,6 +161,8 @@ a.active {
 	font-size: 24px;
 	line-height: 28px;
 	color: #836344;
+	align-items: center;
+	justify-items: center;
 }
 
 .library-header > div:after {
@@ -174,11 +184,20 @@ a.active {
 	color: #992E00;
 }
 
+.btn-delete {
+	cursor: pointer;
+	background-image: url("./images/delete.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 5px;
+	height: 5px;
+}
+
 .score {
 	z-index: 4;
 	position: absolute;
-	right: 50px;
-	top: 60px;
+	right: 80px;
+	top: 20px;
 	color: darkgreen;
 }
 
@@ -344,6 +363,7 @@ a.active {
 }
 
 .btn-exit {
+	cursor: pointer;
 	position: absolute;
 	width: 176px;
 	height: 48px;
@@ -400,6 +420,7 @@ a.active {
 }
 
 .check-item {
+	cursor: pointer;
 	background: #FFFFFF;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	padding: 30px;
@@ -437,6 +458,7 @@ a.active {
 }
 
 .btn-enter {
+	cursor: pointer;
 	background-color: #084934;
 	color: white;
 	padding: 8px;
