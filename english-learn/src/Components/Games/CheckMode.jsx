@@ -30,7 +30,7 @@ export default (props) => {
     };
 
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
-    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')) || [{id: '', word: '', translate: ''}], [{id: '', word: '', translate: ''}], [{id: '', word: '', translate: ''}]);
+    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')) || [{id: '', word: 'Добро пожаловать', translate: 'Welcome'}], [{id: '', word: '', translate: ''}], [{id: '', word: '', translate: ''}]);
     const [checkArr, setCheckArr] = useState([]);
     const currentWord = library[currentWordIndex].translate;
 

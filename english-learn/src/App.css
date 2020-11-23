@@ -6,6 +6,22 @@ body {
 
 .app-wrapper {
 	height: 100vh;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 320px auto;
+	background-image: url("./images/startImage.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position-x: 640px;
+}
+
+.image-container {
+	background-image: url("./images/startImage.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: white;
 }
 
 .nav {
@@ -13,7 +29,11 @@ body {
 	height: 100%;
 	left: 0;
 	top: 0;			  
-	background: #20B887;
+	background: rgb(255, 236, 175);
+}
+
+.nav a {
+	text-decoration: none;
 }
 
 .nav-container {
@@ -32,14 +52,16 @@ body {
 	font-size: 24px;
 	line-height: 28px;
 	text-decoration: none;
-	color: white;
+	color: rgb(102, 48, 146);
 }
 
 a.active {
 	background: #F9FBFF;
-	color: #20B887;
+	color: rgb(102, 48, 146);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	margin-right: -30px;
+	z-index: 0;
+	text-decoration: none;
 }
 
 .logo-container {
@@ -55,11 +77,12 @@ a.active {
 	font-weight: 900;
 	font-size: 36px;
 	line-height: 42px;
-	color: #6FF3C8;
+	color: rgb(102, 48, 146);
 }
 
 .page-container {
-	padding: 10px 0 50px 0; 
+	background-color: white;
+	padding: 10px 0 50px 0;
 }
 
 .btn-round:focus {
@@ -89,12 +112,6 @@ a.active {
 	transform: rotate(45deg);
 }
 
-.app-wrapper {
-	display: grid;
-	grid-auto-flow: column;
-	grid-template-columns: 320px auto;
-}
-
 .label-title {
 	font-style: normal;
 	font-weight: normal;
@@ -120,7 +137,7 @@ a.active {
 }
 
 .check {
-	background: #1AAD7E;
+	background: rgba(231, 157, 192, 0.95);
 	border: 1px solid rgba(0, 0, 0, 0.03);
 	box-sizing: border-box;
 	color: #FFFFFF;
@@ -133,23 +150,13 @@ a.active {
 }
 
 .library-container {
-	background: rgba(242, 246, 254, 0.46);
-	border: 1px solid rgba(0, 0, 0, 0.05);
+	background: rgba(255, 237, 246, 0.95);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
 }
 
 .library-container > div > div {
 	position: relative;
-}
-
-.library-container > div:not(.library-header) > div:not(:last-child):after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 3px;
-	background: rgba(242, 246, 254, 0.46);
-	height: 100%;
 }
 
 .library-container > div  {
@@ -160,28 +167,23 @@ a.active {
 	font-weight: normal;
 	font-size: 24px;
 	line-height: 28px;
-	color: #836344;
+	color:  rgb(102, 48, 146);
 	align-items: center;
 	justify-items: center;
 }
 
-.library-header > div:after {
-	content: '';
-	position: absolute;
-	height: 16px;
-	width: 80%;
-	background: rgba(242, 100, 94, 0.09);
-	left: 12px;
-	bottom: 8px;
+.library-header{
+	background-color:  rgb(102, 48, 146);
 }
 
 .library-header > div {
 	position: relative;
 	font-weight: 900;
+	text-transform: uppercase;
 	font-style: normal;
 	font-size: 18px;
 	line-height: 21px;
-	color: #992E00;
+	color:  rgb(255, 236, 175);
 }
 
 .btn-delete {
@@ -189,8 +191,9 @@ a.active {
 	background-image: url("./images/delete.svg");
 	background-position: center;
 	background-repeat: no-repeat;
-	width: 5px;
-	height: 5px;
+	width: 2px;
+	height: 2px;
+	opacity: 0.6;
 }
 
 .score {
@@ -198,7 +201,7 @@ a.active {
 	position: absolute;
 	right: 80px;
 	top: 20px;
-	color: darkgreen;
+	color: rgb(102, 48, 146);
 }
 
 .add-word-container {
@@ -219,10 +222,11 @@ a.active {
 }
 
 .learn-wrapper {
+	background-color: white;
 	display: grid;
 	align-items: center;
 	align-content: start;
-	margin-top: 117px;
+	padding-top: 200px;
 	justify-content: center;
 	row-gap: 30px;
 }
@@ -231,7 +235,7 @@ a.active {
 	display: grid;
 	row-gap: 60px;
 	position: relative;
-	background: rgba(242, 246, 254, 0.46);
+	background: rgba(255, 199, 225, 0.45);
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	box-sizing: border-box;
 	padding: 60px 120px;
@@ -251,7 +255,7 @@ a.active {
 .word-translation {
 	font-size: 72px;
 	line-height: 84px;
-	color: #004828;
+	color:rgb(102, 48, 146);
 }
 
 .word-container {
@@ -275,19 +279,20 @@ a.active {
 	font-weight: 300;
 	font-size: 48px;
 	line-height: 56px;
-	color: #1AAD7E;
+	color: rgb(118, 78, 151);
 }
 
 .btn-next {
 	cursor: pointer;
 	justify-self: end;
 	padding: 4px 40px;
-	background-color: #0C9267;
+	background-color:rgb(102, 48, 146);
 	color: white;
 }
 
 .btn-repeat {
-	background-color: #0C9267;
+	cursor: pointer;
+	background-color: rgb(102, 48, 146);
 	color: white;
 	padding: 20px;
 	margin: 30px auto;
@@ -316,21 +321,22 @@ a.active {
 	grid-template-columns: repeat(2, 1fr);
 	justify-items: center;
 	padding: 25px 55px 55px 55px;
+	margin-bottom: 20px;
 }
 
 .easy-mode {
-	background: rgba(215, 228, 255, 0.46);
+	background: rgba(255, 199, 225, 0.95);
 }
 
 .hard-mode {
-	background: rgba(176, 222, 255, 0.46);
+	background:rgba(231, 157, 192, 0.95);
 }
 
 .mode-title {
 	font-weight: bold;
 	font-size: 36px;
 	line-height: 42px;
-	color: #036344;
+	color:  rgb(102, 48, 146);
 }
 
 .mode-description {
@@ -339,11 +345,15 @@ a.active {
 }
 
 .easy-mode .mode-description {
-	color: #1B81DF;
+	color: #fffaad;
 }
 
 .hard-mode .mode-description {
-	color: #1B46DF;
+	color: #fbeb91;
+}
+
+.mode-wrapper {
+	background-color: white;
 }
 
 .mode-page {
@@ -358,7 +368,7 @@ a.active {
 	width: 100vw;
 	top: 0;
 	left: 0;
-	background: rgb(242, 246, 254);
+	background: rgb(255, 255, 255);
 	border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -369,7 +379,7 @@ a.active {
 	height: 48px;
 	left: 42px;
 	top: 32px;
-	background: #036344;
+	background: rgba(231, 157, 192, 0.95);
 	border: none;
 	color: white;
 	font-size: 24px;
@@ -402,7 +412,7 @@ a.active {
 	font-size: 144px;
 	line-height: 169px;
 	align-items: center;
-	color: #036344;
+	color: rgb(102, 48, 146);
 }
 
 .mode-title-word-description {
@@ -428,7 +438,7 @@ a.active {
 	font-size: 36px;
 	line-height: 42px;
 	text-align: center;
-	color: #516961;
+	color:rgb(102, 48, 146);
 }
 
 .mode-wrapper {
@@ -454,12 +464,12 @@ a.active {
 	border: none;
 	background: transparent;
 	padding: 8px 13px;
-	border-bottom: 1px solid #084934;
+	border-bottom: 1px solid rgb(102, 48, 146);
 }
 
 .btn-enter {
 	cursor: pointer;
-	background-color: #084934;
+	background-color:rgb(80, 37, 116);
 	color: white;
 	padding: 8px;
 	border: none;

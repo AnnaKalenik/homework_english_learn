@@ -5,7 +5,7 @@ export default (props) => {
     const context = useContext(Context);
 
     const inputRef = useRef();
-    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')) || [{id: '', word: '', translate: ''}])
+    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')) || [{id: '', word: 'Добро пожаловать', translate: 'Welcome'}])
     const [index, setIndex] = useState(0);
 
     useEffect(() => {

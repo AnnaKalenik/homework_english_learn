@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 import './App.css';
 import Nav from './Components/Nav/Nav';
+import StartPage from './Components/StartPage';
 import Score from './Components/Score';
 import Library from './Components/Library';
 import Training from './Components/Training';
@@ -25,6 +26,7 @@ const App = () => {
 			<Context.Provider value={{setScore, score}}>
     	  	<div className="app-wrapper">
     	  	  	<Nav level={level}/>
+				<Route path='/startPage' component={StartPage} />
 				<Score score={score} />
     	  	  	<Route path='/library' component={Library} />
     	  	  	<Route path='/training' component={Training} />

@@ -8,7 +8,7 @@ class Library extends React.Component {
             isOpen: false,
             translation: '',
             value: '',
-            library: JSON.parse(localStorage.getItem('library')) || [{id: '', word: '', translate: ''}]
+            library: JSON.parse(localStorage.getItem('library')) || [{id: '', word: 'Добро пожаловать', translate: 'Welcome'}]
         }; 
 
         this.wordsRef = Array(this.state.library.length);

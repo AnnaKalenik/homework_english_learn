@@ -5,7 +5,9 @@ import {NavLink} from "react-router-dom";
 const Nav = ({level}) => {
     return (
         <nav className="nav">
-            <LogoContainer level={level} />
+            <NavLink to='/startPage'>
+                <LogoContainer level={level} />
+            </NavLink>
             <ul className="nav-container">
                 <NavLink to='/library'>Library</NavLink>
                 <NavLink to='/training'>Training</NavLink>
